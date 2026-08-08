@@ -1,0 +1,22 @@
+Automation proof - runs the pipeline every day at 2:00 AM.
+
+1. Open the crontab editor:
+   crontab -e
+
+2. Add this line (adjust the path to wherever the repo actually lives):
+   0 2 * * * cd /home/paul/week4_etl_pipeline && /usr/bin/python3 run_pipeline.py >> automation/cron_output.log 2>&1
+
+3. Save and check it's registered:
+   crontab -l
+
+   0 2 * * * cd /home/paul/week4_etl_pipeline && /usr/bin/python3 run_pipeline.py >> automation/cron_output.log 2>&1
+
+--------------------------------------------------------------
+Windows Task Scheduler equivalent (if not using cron):
+
+Task name:      week4_etl_pipeline
+Trigger:        Daily, 2:00 AM
+Action:         Start a program
+Program/script: python
+Arguments:      run_pipeline.py
+Start in:       C:\Users\Paul\week4_etl_pipeline

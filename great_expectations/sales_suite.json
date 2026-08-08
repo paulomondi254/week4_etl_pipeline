@@ -1,0 +1,25 @@
+{
+  "expectation_suite_name": "sales_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": { "column": "order_id" }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": { "column": "order_id" }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": { "column": "quantity", "min_value": "MIN_QUANTITY", "strict_min": false }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": { "column": "unit_price", "min_value": "MIN_UNIT_PRICE", "strict_min": true }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": { "column": "discount_pct", "min_value": 0, "max_value": "MAX_DISCOUNT_PCT" }
+    }
+  ]
+}
